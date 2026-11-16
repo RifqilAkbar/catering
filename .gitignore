@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Log
+*.log
+
+# File upload pengguna (placeholder tetap disimpan)
+uploads/*
+!uploads/.gitkeep
+
+# Konfigurasi lokal (jika nanti dibuat)
+config/local.php
