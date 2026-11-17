@@ -49,23 +49,115 @@
         '</div><h3>' + f[0] + '</h3><p>' + f[1] + '</p></div>';
     }).join('');
 
-    var html = '<section class="hero"><div class="container"><div class="hero-inner">' +
-      '<span class="eyebrow">Catering Rumahan, Kualitas Restoran</span>' +
-      '<h1>Solusi Catering <em>Lezat</em> untuk Setiap Acara</h1>' +
-      '<p>Dari rapat kantor, syukuran keluarga, hingga pernikahan &mdash; kami siapkan sajian segar, higienis, dan tepat waktu. Pesan online, kami antar ke lokasi Anda.</p>' +
-      '<div class="hero-actions">' +
-        '<a href="#/menu" class="btn btn-accent">Pesan Sekarang</a>' +
-        '<a href="#/?go=kategori" class="btn btn-outline">Lihat Kategori</a>' +
+    var adPhotos = [
+      { src: 'images/27k.jpg', alt: 'Nasi kotak dengan ayam bakar, telur, dan tumis mie' },
+      { src: 'images/13k.jpg', alt: 'Nasi kotak kuning dengan ayam bakar dan mie goreng' },
+      { src: 'images/geprek-10k.jpg', alt: 'Ayam geprek crispy dalam kotak makan' },
+      { src: 'images/20k.jpg', alt: 'Puluhan nasi kotak siap dikirim untuk acara' }
+    ];
+
+    var adSlides = adPhotos.map(function (photo, index) {
+      return '<img class="ig-slide' + (index === 0 ? ' is-active' : '') + '" src="' + e(photo.src) + '" alt="' + e(photo.alt) + '"' +
+        (index === 0 ? '' : ' loading="lazy"') + ' data-ad-slide="' + index + '">';
+    }).join('');
+
+    var adDots = adPhotos.map(function (photo, index) {
+      return '<button type="button" class="ig-dot' + (index === 0 ? ' is-active' : '') + '" data-ad-dot="' + index + '" aria-label="Foto ' + (index + 1) + '"' +
+        (index === 0 ? ' aria-current="true"' : '') + '></button>';
+    }).join('');
+
+    var promoCards = [
+      { image: 'images/13k.jpg', tag: 'Paling dicari', title: 'Nasi Kotak', text: 'Praktis untuk rapat, seminar, dan syukuran.', price: 'Rp13.000', link: '#/menu?category=nasi-kotak' },
+      { image: 'images/geprek-10k.jpg', tag: 'Hemat', title: 'Ayam Geprek', text: 'Sambal khas dengan level pedas pilihan.', price: 'Rp10.000', link: '#/menu?category=ayam-geprek' },
+      { image: 'images/bg4.jpg', tag: 'Acara spesial', title: 'Tumpeng', text: 'Tampilan megah untuk momen berharga.', price: 'Rp85.000', link: '#/menu?category=tumpeng' }
+    ].map(function (promo) {
+      return '<a class="promo-card reveal" href="' + promo.link + '">' +
+        '<span class="promo-bg" style="background-image:url(' + e(promo.image) + ')" aria-hidden="true"></span>' +
+        '<span class="promo-tag">' + promo.tag + '</span>' +
+        '<div class="promo-body"><h3>' + promo.title + '</h3><p>' + promo.text + '</p>' +
+          '<span class="promo-price">Mulai <strong>' + promo.price + '</strong><span class="promo-arrow" aria-hidden="true">&rarr;</span></span>' +
+        '</div></a>';
+    }).join('');
+
+    var tickerItems = ['Promo minggu ini', 'Nasi kotak mulai Rp13.000', 'Ayam geprek mulai Rp10.000', 'Tumpeng mulai Rp85.000', 'Gratis konsultasi menu', 'Antar tepat waktu'];
+    var tickerSet = tickerItems.map(function (item) {
+      return '<span>' + item + '</span><i aria-hidden="true"></i>';
+    }).join('');
+
+    var commentHtml = [
+      { initials: 'RN', name: 'rina.nurhaliza', text: 'Nasi kotaknya enak dan porsinya pas. Acara rapat kantor kami berjalan lancar karena pengirimannya tepat waktu.', meta: 'Rapat kantor &middot; 2 hari lalu' },
+      { initials: 'BS', name: 'budi.santoso', text: 'Tumpengnya cantik dan rasanya luar biasa. Keluarga besar puas, dekorasinya juga rapi. Pasti pesan lagi.', meta: 'Syukuran keluarga &middot; 1 minggu lalu' },
+      { initials: 'DA', name: 'dewi.anggraini', text: 'Ayam gepreknya pedasnya pas dan masih hangat saat sampai. Paket komplitnya worth it banget untuk makan siang.', meta: 'Pelanggan setia &middot; 1 minggu lalu' }
+    ].map(function (comment) {
+      return '<div class="ig-comment">' +
+        '<span class="ig-comment-avatar">' + comment.initials + '</span>' +
+        '<div class="ig-comment-body"><p><strong>' + comment.name + '</strong> ' + comment.text + '</p>' +
+          '<span class="ig-comment-meta">' + comment.meta + ' &middot; Suka &middot; Balas</span></div>' +
+      '</div>';
+    }).join('');
+
+    var hero = '<section class="ig-hero"><div class="container"><div class="ig-hero-grid">' +
+      '<div class="ig-hero-copy">' +
+        '<span class="ig-sponsored"><span></span>Iklan &middot; Sponsored</span>' +
+        '<h1>Nasi kotak &amp; tumpeng <em>mulai Rp13.000</em></h1>' +
+        '<p>Untuk rapat kantor, syukuran, sampai acara keluarga. Dimasak segar setiap hari, dikemas rapi, dan diantar tepat waktu ke lokasi Anda.</p>' +
+        '<div class="ig-price-row">' +
+          '<div class="ig-price-card"><span>Nasi kotak</span><strong>Rp13.000</strong></div>' +
+          '<div class="ig-price-card"><span>Ayam geprek</span><strong>Rp10.000</strong></div>' +
+          '<div class="ig-price-card"><span>Tumpeng</span><strong>Rp85.000</strong></div>' +
+        '</div>' +
+        '<div class="hero-actions">' +
+          '<a href="#/menu" class="btn btn-accent">Pesan Sekarang</a>' +
+          '<a href="#/?go=kategori" class="btn btn-outline">Lihat Kategori</a>' +
+        '</div>' +
+        '<div class="ig-proof">' +
+          '<div class="ig-avatars" aria-hidden="true"><span>RN</span><span>BS</span><span>DA</span><span>+</span></div>' +
+          '<div class="ig-proof-text"><strong>4.9/5 &#9733;</strong><span>dari 500+ pesanan pelanggan</span></div>' +
+        '</div>' +
       '</div>' +
-      '<div class="hero-stats">' +
-        '<div class="hero-stat"><strong>500+</strong><span>Pesanan Selesai</span></div>' +
-        '<div class="hero-stat"><strong>4.9/5</strong><span>Rating Pelanggan</span></div>' +
-        '<div class="hero-stat"><strong>3</strong><span>Kategori Favorit</span></div>' +
+      '<div class="ig-hero-post">' +
+        '<div class="ig-post">' +
+          '<div class="ig-post-head">' +
+            '<span class="ig-avatar">DC</span>' +
+            '<div class="ig-post-user"><strong>dapurcatering</strong><span>Sponsored &middot; Catering</span></div>' +
+            '<span class="ig-post-more" aria-hidden="true">&bull;&bull;&bull;</span>' +
+          '</div>' +
+          '<div class="ig-carousel" data-ad-carousel data-ad-index="0">' +
+            '<div class="ig-slides">' + adSlides + '</div>' +
+            '<span class="ig-counter"><span data-ad-current>1</span>/' + adPhotos.length + '</span>' +
+            '<button type="button" class="ig-nav ig-nav--prev" data-ad-prev aria-label="Foto sebelumnya">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>' +
+            '<button type="button" class="ig-nav ig-nav--next" data-ad-next aria-label="Foto berikutnya">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>' +
+            '<div class="ig-dots">' + adDots + '</div>' +
+          '</div>' +
+          '<div class="ig-actions">' +
+            '<span class="ig-action ig-action--like"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-8.4A5.4 5.4 0 0 1 12 6.3a5.4 5.4 0 0 1 9.5 6.3C19.5 16.4 12 21 12 21Z"/></svg><span class="ig-likes-inline">1.248</span></span>' +
+            '<span class="ig-action"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-3.8-.8L3 21l1.9-5.1A8.4 8.4 0 1 1 21 11.5Z"/></svg></span>' +
+            '<span class="ig-action"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>' +
+            '<span class="ig-action ig-action--save"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg></span>' +
+          '</div>' +
+          '<div class="ig-likes">1.248 suka</div>' +
+          '<p class="ig-caption"><strong>dapurcatering</strong> Nasi kotak mulai Rp13.000, ayam geprek mulai Rp10.000. Bisa request menu dan jumlah sesuai acara. <span class="ig-tag">#dapurcatering</span> <span class="ig-tag">#nasikotak</span> <span class="ig-tag">#tumpeng</span></p>' +
+          '<p class="ig-comments-link">Lihat semua 87 komentar</p>' +
+          '<a class="ig-cta" href="#/menu"><span>Pesan Sekarang</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>' +
+        '</div>' +
       '</div>' +
-    '</div></div>' +
-    '<div class="hero-card"><span class="round-icon">' +
-      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' +
-    '</span><div><strong>Pesan hari ini, antar besok</strong><span>Gratis konsultasi paket via WhatsApp</span></div></div></section>' +
+    '</div></div></section>';
+
+    var ticker = '<div class="ads-ticker" aria-hidden="true"><div class="ads-ticker-track">' +
+      '<div class="ads-ticker-set">' + tickerSet + '</div>' +
+      '<div class="ads-ticker-set">' + tickerSet + '</div>' +
+    '</div></div>';
+
+    var promoSection = '<section class="promo-section"><div class="container">' +
+      '<div class="section-head reveal"><span class="eyebrow">Promo minggu ini</span>' +
+      '<h2>Pilih paket, langsung pesan</h2>' +
+      '<p>Harga mulai dari, bisa disesuaikan dengan jumlah tamu dan kebutuhan acara Anda.</p></div>' +
+      '<div class="promo-grid">' + promoCards + '</div>' +
+    '</div></section>';
+
+    var html = hero + ticker + promoSection +
 
     '<section class="section section--cream" id="kategori"><div class="container">' +
       '<div class="section-head reveal"><span class="eyebrow">Pilihan Kategori</span>' +
@@ -105,19 +197,16 @@
     '</div></section>' +
 
     '<section class="section section--cream" id="testimoni"><div class="container">' +
-      '<div class="section-head reveal"><span class="eyebrow">Testimoni</span>' +
-      '<h2>Apa Kata Pelanggan Kami</h2>' +
-      '<p>Kepuasan pelanggan adalah prioritas utama kami di setiap pesanan.</p></div>' +
-      '<div class="testimonial-grid">' +
-        '<div class="testimonial-card reveal"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' +
-          '<p>"Nasi kotaknya enak dan porsinya pas. Acara rapat kantor kami berjalan lancar karena pengirimannya tepat waktu."</p>' +
-          '<div class="testimonial-author"><div class="avatar">RN</div><div><strong>Rina Nurhaliza</strong><span>Rapat Kantor</span></div></div></div>' +
-        '<div class="testimonial-card reveal"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' +
-          '<p>"Tumpengnya cantik dan rasanya luar biasa. Keluarga besar puas, dekorasinya juga rapi. Pasti pesan lagi."</p>' +
-          '<div class="testimonial-author"><div class="avatar">BS</div><div><strong>Budi Santoso</strong><span>Syukuran Keluarga</span></div></div></div>' +
-        '<div class="testimonial-card reveal"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' +
-          '<p>"Ayam gepreknya pedasnya pas dan masih hangat saat sampai. Paket komplitnya worthed banget untuk makan siang."</p>' +
-          '<div class="testimonial-author"><div class="avatar">DA</div><div><strong>Dewi Anggraini</strong><span>Pelanggan Setia</span></div></div></div>' +
+      '<div class="section-head reveal"><span class="eyebrow">Kata Pelanggan</span>' +
+      '<h2>Kolom komentar yang bikin lapar</h2>' +
+      '<p>Cerita singkat dari pelanggan yang sudah memesan untuk acara mereka.</p></div>' +
+      '<div class="ig-comment-card reveal">' +
+        '<div class="ig-comment-head">' +
+          '<span class="ig-avatar lg">DC</span>' +
+          '<div><strong>dapurcatering</strong><span>1.248 suka &middot; 87 komentar</span></div>' +
+          '<a class="ig-comment-more" href="#/menu">Pesan menu ini</a>' +
+        '</div>' +
+        commentHtml +
       '</div>' +
     '</div></section>' +
 
@@ -128,9 +217,13 @@
         '<a href="#/menu" class="btn btn-light">Pesan Sekarang</a>' +
         '<a href="https://wa.me/' + D.whatsapp + '" target="_blank" rel="noopener" class="btn btn-outline" style="color:#fff">Chat WhatsApp</a>' +
       '</div>' +
-    '</div></div></section>';
+    '</div></div></section>' +
+    '<div class="ig-sticky">' +
+      '<div class="ig-sticky-info"><strong>Mulai Rp10.000</strong><span>Nasi kotak &middot; geprek &middot; tumpeng</span></div>' +
+      '<a href="#/menu" class="btn btn-accent btn-sm">Pesan Sekarang</a>' +
+    '</div>';
 
-    return { title: 'Beranda', html: html };
+    return { title: 'Nasi Kotak & Tumpeng Mulai Rp13.000', html: html };
   }
 
   /* ---------------- Menu ---------------- */

@@ -29,6 +29,17 @@ Data demo disimpan di `localStorage` browser, jadi setiap pengunjung memiliki da
 
 > GitHub Pages hanya menyajikan file statis, sehingga PHP dan MySQL tidak berjalan di sana. Versi statis di `docs/` adalah tiruan fungsi utama aplikasi.
 
+### Mengubah situs GitHub Pages (tanpa XAMPP)
+
+Semua yang tampil di GitHub Pages berasal dari folder `docs/`. Untuk mengubah landing page atau halaman lain, cukup edit file di `docs/` lalu push ke branch `main` — tidak perlu memasang XAMPP. GitHub Pages (source: branch `main`, folder `/docs`) akan memperbarui situs otomatis dalam 1–2 menit.
+
+- `docs/index.html` — judul, meta, dan stylesheet
+- `docs/assets/css/ads.css` — tampilan landing page gaya iklan Instagram
+- `docs/assets/js/views-public.js` — isi halaman beranda, menu, keranjang, dll.
+- `docs/images/` — foto menu
+
+Versi PHP + MySQL di root proyek hanya alternatif (arsip) dan tidak diperlukan untuk GitHub Pages.
+
 ## Menjalankan aplikasi PHP di XAMPP
 
 1. Salin folder proyek ke `C:\xampp\htdocs\dapur-mbak-khotim`.

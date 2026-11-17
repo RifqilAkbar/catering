@@ -55,7 +55,8 @@
     } else {
       document.body.className = '';
       result = DC.public.render(route);
-      app.innerHTML = DC.publicHeader(route) + DC.demoStrip() + '<main>' + result.html + '</main>' + DC.publicFooter();
+      app.innerHTML = DC.publicHeader(route) + (route.path === '/' ? '' : DC.demoStrip()) + '<main>' + result.html + '</main>' + DC.publicFooter();
+      document.body.classList.toggle('has-ig-sticky', !!app.querySelector('.ig-sticky'));
       document.title = result.title + ' · Dapur Catering';
     }
 
@@ -103,6 +104,28 @@
     var qty = Math.max(1, parseInt(qtyInput ? qtyInput.value : '1', 10) || 1);
     var total = form.querySelector('[data-product-total]');
     if (total) total.textContent = DC.rupiah(unit * qty);
+  }
+
+  /* ---------------- Carousel iklan ---------------- */
+  function setAdSlide(carousel, index) {
+    var slides = carousel.querySelectorAll('[data-ad-slide]');
+    var dots = carousel.querySelectorAll('[data-ad-dot]');
+    if (!slides.length) return;
+    var next = ((index % slides.length) + slides.length) % slides.length;
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle('is-active', i === next);
+    });
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('is-active', i === next);
+      if (i === next) {
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.removeAttribute('aria-current');
+      }
+    });
+    var current = carousel.querySelector('[data-ad-current]');
+    if (current) current.textContent = String(next + 1);
+    carousel.setAttribute('data-ad-index', String(next));
   }
 
   /* ---------------- Submit ---------------- */
@@ -386,6 +409,22 @@
     if (navToggle) {
       var navMenu = document.querySelector('[data-nav-menu]');
       if (navMenu) navMenu.classList.toggle('open');
+      return;
+    }
+
+    var adControl = ev.target.closest('[data-ad-prev], [data-ad-next], [data-ad-dot]');
+    if (adControl) {
+      var carousel = adControl.closest('[data-ad-carousel]');
+      if (!carousel) return;
+      var index = parseInt(carousel.getAttribute('data-ad-index'), 10) || 0;
+      if (adControl.hasAttribute('data-ad-prev')) {
+        index -= 1;
+      } else if (adControl.hasAttribute('data-ad-next')) {
+        index += 1;
+      } else {
+        index = parseInt(adControl.getAttribute('data-ad-dot'), 10) || 0;
+      }
+      setAdSlide(carousel, index);
       return;
     }
 
