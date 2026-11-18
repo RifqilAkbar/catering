@@ -1,31 +1,30 @@
-# Dapur Mbak Khotim
+# Dapur Mbak Khotim — Prototipe Konsep
 
-Website catering nasi kotak, tumpeng, dan ayam geprek. Situs ini sepenuhnya statis
-(HTML, CSS, dan JavaScript) sehingga tidak membutuhkan PHP, MySQL, atau XAMPP.
+Versi dummy website catering untuk menjelaskan konsep kepada dosen.
+Isinya hanya **HTML, CSS, dan JavaScript** — tanpa foto, PHP, MySQL, atau
+pustaka eksternal.
 
 **Demo online:** https://rifqilakbar.github.io/catering/
 
-## Fitur
+## Isi proyek
 
-- Katalog, pencarian, filter kategori, dan detail produk
-- Keranjang dan checkout
-- Login/daftar pelanggan serta riwayat pesanan
-- Panel admin: dashboard, produk, kategori, pesanan, pelanggan
+```
+index.html   # struktur halaman dan penjelasan konsep
+style.css    # tampilan minimalis dan responsif
+script.js    # data menu dummy, filter, keranjang, simulasi checkout
+```
 
-Semua data demo disimpan di `localStorage` browser, jadi setiap pengunjung
-memiliki data sendiri dan bisa dikembalikan ke awal dengan menghapus data situs
-di browser. Tambah/edit/hapus produk dan kategori sengaja dinonaktifkan di demo.
+## Bagian halaman
 
-## Akun demo
+1. **Konsep** — ringkasan ide dan angka penting.
+2. **Alur** — langkah pelanggan dan admin.
+3. **Menu** — daftar menu dummy dengan filter kategori.
+4. **Simulasi** — keranjang interaktif dan checkout dummy.
+5. **Teknologi** — peran HTML, CSS, JavaScript, dan batasan versi dummy.
 
-| Peran | Email | Password |
-| --- | --- | --- |
-| Pelanggan | `pelanggan@dapurcatering.com` | `pelanggan123` |
-| Admin | `admin@dapurcatering.com` | `admin123` |
+## Cara menjalankan
 
-## Menjalankan
-
-Cukup buka `index.html` di browser. Jika ingin memakai server lokal:
+Cukup buka `index.html` di browser. Bisa juga memakai server lokal:
 
 ```bash
 python -m http.server 8000
@@ -33,27 +32,10 @@ python -m http.server 8000
 
 Lalu buka `http://localhost:8000`.
 
-## Struktur
+## Catatan presentasi
 
-```
-index.html            # halaman utama (SPA)
-favicon.svg
-assets/
-  css/
-    style.css         # tampilan utama
-    ads.css           # landing page gaya iklan Instagram
-    demo.css          # penyesuaian demo
-    admin.css         # panel admin
-  js/
-    data.js           # data contoh & penyimpanan localStorage
-    core.js           # utilitas, router, state
-    views-public.js   # halaman publik (beranda, menu, keranjang, checkout)
-    views-admin.js    # halaman admin
-    app.js            # inisialisasi aplikasi
-  images/             # foto menu
-```
-
-## GitHub Pages
-
-Situs ini disajikan dari branch `main`, folder root (`/`). Setelah mengubah
-file, push ke `main` dan GitHub Pages akan memperbarui situs dalam 1–2 menit.
+- Semua data menu adalah contoh dan ditulis langsung di `script.js`.
+- Keranjang disimpan di `localStorage` browser, jadi tetap ada saat halaman
+  dimuat ulang.
+- Checkout hanya simulasi; tidak ada data yang dikirim ke server.
+- Tidak ada file gambar sama sekali. Tampilan dibuat dengan CSS.

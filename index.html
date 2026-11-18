@@ -3,42 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dapur Catering &middot; Nasi Kotak &amp; Tumpeng Mulai Rp13.000</title>
-  <meta name="description" content="Catering nasi kotak, tumpeng, dan ayam geprek mulai Rp10.000. Dimasak segar setiap hari, dikemas rapi, dan diantar tepat waktu untuk rapat, syukuran, dan acara keluarga.">
-  <meta name="theme-color" content="#103524">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Dapur Catering">
-  <meta property="og:title" content="Dapur Catering &middot; Nasi Kotak &amp; Tumpeng Mulai Rp13.000">
-  <meta property="og:description" content="Nasi kotak mulai Rp13.000, ayam geprek mulai Rp10.000, tumpeng mulai Rp85.000. Pesan online, antar tepat waktu.">
-  <meta property="og:url" content="https://rifqilakbar.github.io/catering/">
-  <meta property="og:image" content="https://rifqilakbar.github.io/catering/assets/images/27k.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/27k.jpg">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/demo.css">
-  <link rel="stylesheet" href="assets/css/ads.css">
-  <link rel="stylesheet" href="assets/css/admin.css" id="admin-css" disabled>
+  <title>Dapur Mbak Khotim — Konsep Website Catering</title>
+  <meta name="description" content="Prototipe konsep website catering Dapur Mbak Khotim: katalog menu, keranjang, checkout, dan panel admin. Tanpa foto, hanya HTML, CSS, dan JavaScript.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;font-family:Poppins,sans-serif;color:#64756b">
-      Memuat Dapur Catering&hellip;
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#konsep">Dapur <span>Mbak Khotim</span></a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#konsep">Konsep</a>
+        <a href="#alur">Alur</a>
+        <a href="#menu">Menu</a>
+        <a href="#simulasi">Simulasi</a>
+        <a href="#teknologi">Teknologi</a>
+      </nav>
     </div>
-  </div>
-  <noscript>
-    <div style="max-width:640px;margin:60px auto;padding:24px;font-family:Poppins,sans-serif;text-align:center">
-      <h1>JavaScript diperlukan</h1>
-      <p>Versi demo statis ini membutuhkan JavaScript untuk menampilkan menu dan keranjang.</p>
+  </header>
+
+  <main>
+
+    <!-- ===================== KONSEP ===================== -->
+    <section class="hero container" id="konsep">
+      <p class="eyebrow">Prototipe konsep &middot; data dummy &middot; tanpa foto</p>
+      <h1>Website catering yang mudah dipahami, dari menu sampai pesanan.</h1>
+      <p class="lead">
+        Versi dummy ini merangkum konsep website Dapur Mbak Khotim: katalog menu,
+        keranjang, checkout sederhana, dan panel admin. Semua data hanya contoh
+        dan berjalan sepenuhnya di browser.
+      </p>
+      <div class="facts" aria-label="Ringkasan konsep">
+        <div><strong>3</strong><span>kategori menu</span></div>
+        <div><strong>2</strong><span>peran pengguna</span></div>
+        <div><strong>4</strong><span>tahap pemesanan</span></div>
+        <div><strong>0</strong><span>file gambar</span></div>
+      </div>
+    </section>
+
+    <!-- ===================== ALUR ===================== -->
+    <section class="section container" id="alur">
+      <div class="section-head">
+        <p class="eyebrow">Alur</p>
+        <h2>Bagaimana konsepnya bekerja</h2>
+        <p>
+          Ada dua peran utama. Pelanggan memesan menu, sedangkan admin mengelola
+          menu dan pesanan yang masuk.
+        </p>
+      </div>
+
+      <div class="role-grid">
+        <article class="role">
+          <h3>Pelanggan</h3>
+          <ol class="flow">
+            <li>
+              <span class="flow-number">1</span>
+              <div>
+                <strong>Lihat menu</strong>
+                <p>Pengunjung membaca daftar menu, deskripsi singkat, dan harga.</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-number">2</span>
+              <div>
+                <strong>Pilih menu</strong>
+                <p>Menu yang dipilih masuk ke keranjang dan bisa diubah jumlahnya.</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-number">3</span>
+              <div>
+                <strong>Isi data pesanan</strong>
+                <p>Nama, nomor telepon, alamat pengiriman, dan catatan tambahan.</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-number">4</span>
+              <div>
+                <strong>Checkout</strong>
+                <p>Pesanan dikonfirmasi lalu diteruskan ke admin untuk diproses.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class="role">
+          <h3>Admin</h3>
+          <ol class="flow">
+            <li>
+              <span class="flow-number">1</span>
+              <div>
+                <strong>Kelola menu</strong>
+                <p>Menambah, mengubah, atau menonaktifkan menu yang tampil.</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-number">2</span>
+              <div>
+                <strong>Pantau pesanan</strong>
+                <p>Melihat pesanan masuk beserta detail pelanggan dan totalnya.</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-number">3</span>
+              <div>
+                <strong>Konfirmasi</strong>
+                <p>Menghubungi pelanggan dan menandai pesanan sebagai diproses.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+      </div>
+
+      <p class="small-note">
+        Catatan: pada versi dummy ini, tahap pengisian data dan checkout
+        disederhanakan menjadi satu tombol simulasi.
+      </p>
+    </section>
+
+    <!-- ===================== MENU ===================== -->
+    <section class="section container" id="menu">
+      <div class="section-head">
+        <p class="eyebrow">Data dummy</p>
+        <h2>Daftar menu</h2>
+        <p>
+          Semua menu di bawah ini hanya contoh untuk memperlihatkan konsep
+          katalog, filter kategori, dan harga.
+        </p>
+      </div>
+
+      <div class="filters" id="filters" role="group" aria-label="Filter kategori menu">
+        <button class="filter is-active" type="button" data-category="semua">Semua</button>
+        <button class="filter" type="button" data-category="nasi-kotak">Nasi Kotak</button>
+        <button class="filter" type="button" data-category="tumpeng">Tumpeng</button>
+        <button class="filter" type="button" data-category="ayam-geprek">Ayam Geprek</button>
+      </div>
+
+      <div class="menu-list" id="menu-list" aria-live="polite"></div>
+      <p class="menu-count" id="menu-count"></p>
+    </section>
+
+    <!-- ===================== SIMULASI ===================== -->
+    <section class="section container" id="simulasi">
+      <div class="section-head">
+        <p class="eyebrow">Demo interaktif</p>
+        <h2>Simulasi keranjang</h2>
+        <p>
+          Klik <strong>Tambah</strong> pada daftar menu di atas. Keranjang dan
+          total harga akan diperbarui otomatis.
+        </p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="cart">
+          <div class="cart-head">
+            <h3>Keranjang</h3>
+            <button class="link-btn" id="clear-cart" type="button">Kosongkan</button>
+          </div>
+
+          <div class="cart-items" id="cart-items"></div>
+
+          <div class="cart-total">
+            <span>Total</span>
+            <strong id="cart-total">Rp0</strong>
+          </div>
+
+          <button class="primary-btn" id="checkout" type="button">Simulasikan checkout</button>
+          <p class="cart-message" id="cart-message" role="status" hidden></p>
+        </div>
+
+        <aside class="explain">
+          <h3>Poin untuk dijelaskan</h3>
+          <ul>
+            <li>Keranjang menyimpan pilihan pelanggan sebelum checkout.</li>
+            <li>Total dihitung otomatis dari harga menu dikali jumlah.</li>
+            <li>Checkout di sini hanya simulasi, tidak mengirim data ke server.</li>
+            <li>Isi keranjang disimpan di <code>localStorage</code>, jadi tetap ada saat halaman dimuat ulang.</li>
+          </ul>
+          <p class="tiny">
+            Untuk demonstrasi: buka DevTools &rarr; Application &rarr; Local Storage.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== TEKNOLOGI ===================== -->
+    <section class="section container" id="teknologi">
+      <div class="section-head">
+        <p class="eyebrow">Teknologi</p>
+        <h2>Hanya HTML, CSS, dan JavaScript</h2>
+        <p>
+          Tidak ada PHP, MySQL, gambar, atau pustaka eksternal. Seluruh isi
+          situs terdiri dari tiga file yang saling terhubung.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+        <article>
+          <h3>HTML</h3>
+          <p>
+            Menyusun struktur halaman: bagian konsep, alur, daftar menu,
+            simulasi keranjang, dan penjelasan teknologi.
+          </p>
+        </article>
+        <article>
+          <h3>CSS</h3>
+          <p>
+            Mengatur tampilan, warna, jarak, dan tata letak responsif agar
+            nyaman dibaca di laptop maupun ponsel.
+          </p>
+        </article>
+        <article>
+          <h3>JavaScript</h3>
+          <p>
+            Menangani data menu dummy, filter kategori, keranjang, perhitungan
+            total, dan simulasi checkout.
+          </p>
+        </article>
+      </div>
+
+      <div class="note">
+        <h3>Batasan versi dummy</h3>
+        <ul>
+          <li>Data menu dan pesanan tidak tersimpan permanen di server.</li>
+          <li>Tidak ada login, pembayaran, atau pengiriman pesanan sungguhan.</li>
+          <li>Fokus versi ini adalah konsep alur dan tampilan, bukan sistem produksi.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Dapur Mbak Khotim &middot; Prototipe konsep</p>
+      <p>HTML &middot; CSS &middot; JavaScript</p>
     </div>
-  </noscript>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/views-public.js"></script>
-  <script src="assets/js/views-admin.js"></script>
-  <script src="assets/js/app.js"></script>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
