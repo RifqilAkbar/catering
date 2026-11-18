@@ -3,246 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dapur Mbak Khotim — Konsep Website Catering</title>
-  <meta name="description" content="Prototipe konsep website catering Dapur Mbak Khotim: katalog menu, keranjang, checkout, dan panel admin. Tanpa foto, hanya HTML, CSS, dan JavaScript.">
+  <title>Dapur Mbak Khotim - Catering Nasi Kotak</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#konsep">Dapur <span>Mbak Khotim</span></a>
-      <nav class="nav" aria-label="Navigasi utama">
-        <a href="#konsep">Konsep</a>
-        <a href="#alur">Alur</a>
-        <a href="#menu">Menu</a>
-        <a href="#simulasi">Simulasi</a>
-        <a href="#teknologi">Teknologi</a>
-      </nav>
-    </div>
+  <header>
+    <h1>Dapur Mbak Khotim</h1>
+    <p>Catering nasi kotak, tumpeng, dan ayam geprek</p>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#cara-pesan">Cara Pesan</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
   </header>
 
-  <main>
+  <div class="container">
 
-    <!-- ===================== KONSEP ===================== -->
-    <section class="hero container" id="konsep">
-      <p class="eyebrow">Prototipe konsep &middot; data dummy &middot; tanpa foto</p>
-      <h1>Website catering yang mudah dipahami, dari menu sampai pesanan.</h1>
-      <p class="lead">
-        Versi dummy ini merangkum konsep website Dapur Mbak Khotim: katalog menu,
-        keranjang, checkout sederhana, dan panel admin. Semua data hanya contoh
-        dan berjalan sepenuhnya di browser.
+    <section class="sambutan">
+      <h2>Selamat Datang</h2>
+      <p>
+        Dapur Mbak Khotim menyediakan makanan untuk rapat, syukuran,
+        arisan, dan acara keluarga. Menu dibuat segar setiap hari dan
+        diantar sampai ke lokasi.
       </p>
-      <div class="facts" aria-label="Ringkasan konsep">
-        <div><strong>3</strong><span>kategori menu</span></div>
-        <div><strong>2</strong><span>peran pengguna</span></div>
-        <div><strong>4</strong><span>tahap pemesanan</span></div>
-        <div><strong>0</strong><span>file gambar</span></div>
-      </div>
-    </section>
-
-    <!-- ===================== ALUR ===================== -->
-    <section class="section container" id="alur">
-      <div class="section-head">
-        <p class="eyebrow">Alur</p>
-        <h2>Bagaimana konsepnya bekerja</h2>
-        <p>
-          Ada dua peran utama. Pelanggan memesan menu, sedangkan admin mengelola
-          menu dan pesanan yang masuk.
-        </p>
-      </div>
-
-      <div class="role-grid">
-        <article class="role">
-          <h3>Pelanggan</h3>
-          <ol class="flow">
-            <li>
-              <span class="flow-number">1</span>
-              <div>
-                <strong>Lihat menu</strong>
-                <p>Pengunjung membaca daftar menu, deskripsi singkat, dan harga.</p>
-              </div>
-            </li>
-            <li>
-              <span class="flow-number">2</span>
-              <div>
-                <strong>Pilih menu</strong>
-                <p>Menu yang dipilih masuk ke keranjang dan bisa diubah jumlahnya.</p>
-              </div>
-            </li>
-            <li>
-              <span class="flow-number">3</span>
-              <div>
-                <strong>Isi data pesanan</strong>
-                <p>Nama, nomor telepon, alamat pengiriman, dan catatan tambahan.</p>
-              </div>
-            </li>
-            <li>
-              <span class="flow-number">4</span>
-              <div>
-                <strong>Checkout</strong>
-                <p>Pesanan dikonfirmasi lalu diteruskan ke admin untuk diproses.</p>
-              </div>
-            </li>
-          </ol>
-        </article>
-
-        <article class="role">
-          <h3>Admin</h3>
-          <ol class="flow">
-            <li>
-              <span class="flow-number">1</span>
-              <div>
-                <strong>Kelola menu</strong>
-                <p>Menambah, mengubah, atau menonaktifkan menu yang tampil.</p>
-              </div>
-            </li>
-            <li>
-              <span class="flow-number">2</span>
-              <div>
-                <strong>Pantau pesanan</strong>
-                <p>Melihat pesanan masuk beserta detail pelanggan dan totalnya.</p>
-              </div>
-            </li>
-            <li>
-              <span class="flow-number">3</span>
-              <div>
-                <strong>Konfirmasi</strong>
-                <p>Menghubungi pelanggan dan menandai pesanan sebagai diproses.</p>
-              </div>
-            </li>
-          </ol>
-        </article>
-      </div>
-
-      <p class="small-note">
-        Catatan: pada versi dummy ini, tahap pengisian data dan checkout
-        disederhanakan menjadi satu tombol simulasi.
+      <p>
+        Harga menu mulai dari Rp10.000. Silakan lihat daftar menu di
+        bawah ini.
       </p>
     </section>
 
-    <!-- ===================== MENU ===================== -->
-    <section class="section container" id="menu">
-      <div class="section-head">
-        <p class="eyebrow">Data dummy</p>
-        <h2>Daftar menu</h2>
-        <p>
-          Semua menu di bawah ini hanya contoh untuk memperlihatkan konsep
-          katalog, filter kategori, dan harga.
-        </p>
-      </div>
+    <section id="menu">
+      <h2>Daftar Menu</h2>
 
-      <div class="filters" id="filters" role="group" aria-label="Filter kategori menu">
-        <button class="filter is-active" type="button" data-category="semua">Semua</button>
-        <button class="filter" type="button" data-category="nasi-kotak">Nasi Kotak</button>
-        <button class="filter" type="button" data-category="tumpeng">Tumpeng</button>
-        <button class="filter" type="button" data-category="ayam-geprek">Ayam Geprek</button>
-      </div>
+      <h3>Nasi Kotak</h3>
+      <table>
+        <tr>
+          <th>Menu</th>
+          <th>Keterangan</th>
+          <th>Harga</th>
+        </tr>
+        <tr>
+          <td>Nasi Kotak Ekonomis</td>
+          <td>Nasi, lauk, sayur, sambal, dan kerupuk</td>
+          <td>Rp13.000</td>
+        </tr>
+        <tr>
+          <td>Nasi Kotak Standar</td>
+          <td>Nasi, ayam, mie, sambal, dan kerupuk</td>
+          <td>Rp15.000</td>
+        </tr>
+        <tr>
+          <td>Nasi Kotak Premium</td>
+          <td>Nasi, ayam, nugget, dan lauk lengkap</td>
+          <td>Rp18.000</td>
+        </tr>
+        <tr>
+          <td>Nasi Kotak Spesial</td>
+          <td>Nasi, ayam besar, telur, dan nugget</td>
+          <td>Rp20.000</td>
+        </tr>
+      </table>
 
-      <div class="menu-list" id="menu-list" aria-live="polite"></div>
-      <p class="menu-count" id="menu-count"></p>
+      <h3>Tumpeng</h3>
+      <table>
+        <tr>
+          <th>Menu</th>
+          <th>Keterangan</th>
+          <th>Harga</th>
+        </tr>
+        <tr>
+          <td>Tumpeng Mini</td>
+          <td>Untuk 4 - 5 orang</td>
+          <td>Rp85.000</td>
+        </tr>
+        <tr>
+          <td>Tumpeng Nampan</td>
+          <td>Untuk 6 - 8 orang</td>
+          <td>Rp150.000</td>
+        </tr>
+        <tr>
+          <td>Tumpeng 10 Orang</td>
+          <td>Untuk 10 orang</td>
+          <td>Rp250.000</td>
+        </tr>
+      </table>
+
+      <h3>Ayam Geprek</h3>
+      <table>
+        <tr>
+          <th>Menu</th>
+          <th>Keterangan</th>
+          <th>Harga</th>
+        </tr>
+        <tr>
+          <td>Ayam Geprek Original</td>
+          <td>Ayam geprek dengan sambal original</td>
+          <td>Rp10.000</td>
+        </tr>
+        <tr>
+          <td>Ayam Geprek Sambal Bawang</td>
+          <td>Ayam geprek dengan sambal bawang</td>
+          <td>Rp12.000</td>
+        </tr>
+        <tr>
+          <td>Ayam Geprek Keju</td>
+          <td>Ayam geprek dengan topping keju</td>
+          <td>Rp15.000</td>
+        </tr>
+        <tr>
+          <td>Paket Ayam Geprek Komplit</td>
+          <td>Ayam geprek, nasi, telur, dan minuman</td>
+          <td>Rp20.000</td>
+        </tr>
+      </table>
     </section>
 
-    <!-- ===================== SIMULASI ===================== -->
-    <section class="section container" id="simulasi">
-      <div class="section-head">
-        <p class="eyebrow">Demo interaktif</p>
-        <h2>Simulasi keranjang</h2>
-        <p>
-          Klik <strong>Tambah</strong> pada daftar menu di atas. Keranjang dan
-          total harga akan diperbarui otomatis.
-        </p>
-      </div>
-
-      <div class="demo-grid">
-        <div class="cart">
-          <div class="cart-head">
-            <h3>Keranjang</h3>
-            <button class="link-btn" id="clear-cart" type="button">Kosongkan</button>
-          </div>
-
-          <div class="cart-items" id="cart-items"></div>
-
-          <div class="cart-total">
-            <span>Total</span>
-            <strong id="cart-total">Rp0</strong>
-          </div>
-
-          <button class="primary-btn" id="checkout" type="button">Simulasikan checkout</button>
-          <p class="cart-message" id="cart-message" role="status" hidden></p>
-        </div>
-
-        <aside class="explain">
-          <h3>Poin untuk dijelaskan</h3>
-          <ul>
-            <li>Keranjang menyimpan pilihan pelanggan sebelum checkout.</li>
-            <li>Total dihitung otomatis dari harga menu dikali jumlah.</li>
-            <li>Checkout di sini hanya simulasi, tidak mengirim data ke server.</li>
-            <li>Isi keranjang disimpan di <code>localStorage</code>, jadi tetap ada saat halaman dimuat ulang.</li>
-          </ul>
-          <p class="tiny">
-            Untuk demonstrasi: buka DevTools &rarr; Application &rarr; Local Storage.
-          </p>
-        </aside>
-      </div>
+    <section id="cara-pesan">
+      <h2>Cara Pesan</h2>
+      <ol>
+        <li>Pilih menu yang ingin dipesan.</li>
+        <li>Hubungi kami melalui telepon atau WhatsApp.</li>
+        <li>Sebutkan jumlah pesanan, tanggal, dan alamat pengiriman.</li>
+        <li>Pesanan akan dikonfirmasi oleh admin.</li>
+        <li>Pembayaran dilakukan saat pesanan dikonfirmasi.</li>
+      </ol>
+      <p class="catatan">
+        Pemesanan minimal 10 kotak untuk nasi kotak dan tumpeng.
+        Untuk pesanan besar, mohon hubungi kami satu hari sebelumnya.
+      </p>
     </section>
 
-    <!-- ===================== TEKNOLOGI ===================== -->
-    <section class="section container" id="teknologi">
-      <div class="section-head">
-        <p class="eyebrow">Teknologi</p>
-        <h2>Hanya HTML, CSS, dan JavaScript</h2>
-        <p>
-          Tidak ada PHP, MySQL, gambar, atau pustaka eksternal. Seluruh isi
-          situs terdiri dari tiga file yang saling terhubung.
-        </p>
-      </div>
-
-      <div class="tech-grid">
-        <article>
-          <h3>HTML</h3>
-          <p>
-            Menyusun struktur halaman: bagian konsep, alur, daftar menu,
-            simulasi keranjang, dan penjelasan teknologi.
-          </p>
-        </article>
-        <article>
-          <h3>CSS</h3>
-          <p>
-            Mengatur tampilan, warna, jarak, dan tata letak responsif agar
-            nyaman dibaca di laptop maupun ponsel.
-          </p>
-        </article>
-        <article>
-          <h3>JavaScript</h3>
-          <p>
-            Menangani data menu dummy, filter kategori, keranjang, perhitungan
-            total, dan simulasi checkout.
-          </p>
-        </article>
-      </div>
-
-      <div class="note">
-        <h3>Batasan versi dummy</h3>
-        <ul>
-          <li>Data menu dan pesanan tidak tersimpan permanen di server.</li>
-          <li>Tidak ada login, pembayaran, atau pengiriman pesanan sungguhan.</li>
-          <li>Fokus versi ini adalah konsep alur dan tampilan, bukan sistem produksi.</li>
-        </ul>
-      </div>
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>
+        Dapur Mbak Khotim adalah usaha catering rumahan yang sudah
+        melayani berbagai acara di sekitar kota. Kami mengutamakan
+        rasa, kebersihan, dan ketepatan waktu pengiriman.
+      </p>
+      <ul>
+        <li>Masakan dibuat segar setiap hari.</li>
+        <li>Bisa pesan dalam jumlah banyak.</li>
+        <li>Bisa antar ke lokasi acara.</li>
+        <li>Harga terjangkau.</li>
+      </ul>
     </section>
 
-  </main>
+    <section id="kontak">
+      <h2>Kontak</h2>
+      <p><strong>Alamat:</strong> Jl. Melati No. 12, Yogyakarta</p>
+      <p><strong>Telepon / WhatsApp:</strong> 0812-3456-7890</p>
+      <p><strong>Jam Buka:</strong> Setiap hari, pukul 07.00 - 20.00</p>
+      <p><strong>Email:</strong> dapurmbakkhotim@example.com</p>
+    </section>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>Dapur Mbak Khotim &middot; Prototipe konsep</p>
-      <p>HTML &middot; CSS &middot; JavaScript</p>
-    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Dapur Mbak Khotim</p>
+    <p>Dibuat dengan HTML dan CSS.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
