@@ -1,77 +1,59 @@
-# Dapur Catering
+# Dapur Mbak Khotim
 
-Website catering nasi kotak, tumpeng, dan ayam geprek. Repositori ini berisi **dua versi**:
+Website catering nasi kotak, tumpeng, dan ayam geprek. Situs ini sepenuhnya statis
+(HTML, CSS, dan JavaScript) sehingga tidak membutuhkan PHP, MySQL, atau XAMPP.
 
-| Versi | Lokasi | Kebutuhan |
-| --- | --- | --- |
-| Demo statis | `docs/` | Browser saja (tanpa XAMPP) |
-| Aplikasi PHP + MySQL | root proyek | XAMPP / PHP 8 + MySQL |
+**Demo online:** https://rifqilakbar.github.io/catering/
 
-## Demo online (GitHub Pages)
+## Fitur
 
-**https://rifqilakbar.github.io/catering/**
-
-Demo statis berjalan sepenuhnya di browser:
-
-- Katalog, pencarian, filter kategori, detail produk
+- Katalog, pencarian, filter kategori, dan detail produk
 - Keranjang dan checkout
-- Login/daftar pelanggan dan riwayat pesanan
+- Login/daftar pelanggan serta riwayat pesanan
 - Panel admin: dashboard, produk, kategori, pesanan, pelanggan
 
-Data demo disimpan di `localStorage` browser, jadi setiap pengunjung memiliki data sendiri dan bisa dikembalikan ke awal dengan menghapus data situs di browser. Tambah/edit/hapus produk dan kategori sengaja dinonaktifkan di demo.
+Semua data demo disimpan di `localStorage` browser, jadi setiap pengunjung
+memiliki data sendiri dan bisa dikembalikan ke awal dengan menghapus data situs
+di browser. Tambah/edit/hapus produk dan kategori sengaja dinonaktifkan di demo.
 
-### Akun demo
+## Akun demo
 
 | Peran | Email | Password |
 | --- | --- | --- |
 | Pelanggan | `pelanggan@dapurcatering.com` | `pelanggan123` |
 | Admin | `admin@dapurcatering.com` | `admin123` |
 
-> GitHub Pages hanya menyajikan file statis, sehingga PHP dan MySQL tidak berjalan di sana. Versi statis di `docs/` adalah tiruan fungsi utama aplikasi.
+## Menjalankan
 
-### Mengubah situs GitHub Pages (tanpa XAMPP)
+Cukup buka `index.html` di browser. Jika ingin memakai server lokal:
 
-Semua yang tampil di GitHub Pages berasal dari folder `docs/`. Untuk mengubah landing page atau halaman lain, cukup edit file di `docs/` lalu push ke branch `main` — tidak perlu memasang XAMPP. GitHub Pages (source: branch `main`, folder `/docs`) akan memperbarui situs otomatis dalam 1–2 menit.
-
-- `docs/index.html` — judul, meta, dan stylesheet
-- `docs/assets/css/ads.css` — tampilan landing page gaya iklan Instagram
-- `docs/assets/js/views-public.js` — isi halaman beranda, menu, keranjang, dll.
-- `docs/images/` — foto menu
-
-Versi PHP + MySQL di root proyek hanya alternatif (arsip) dan tidak diperlukan untuk GitHub Pages.
-
-## Menjalankan aplikasi PHP di XAMPP
-
-1. Salin folder proyek ke `C:\xampp\htdocs\dapur-mbak-khotim`.
-2. Jalankan **Apache** dan **MySQL** dari XAMPP Control Panel.
-3. Buka `http://localhost/phpmyadmin`, lalu impor:
-   - `database/schema.sql`
-   - `database/seed.sql`
-4. Buka `http://localhost/dapur-mbak-khotim/`.
-
-Konfigurasi database default ada di `config/config.php`:
-
-```php
-DB_HOST = 127.0.0.1
-DB_PORT = 3306
-DB_NAME = dapur_catering
-DB_USER = root
-DB_PASS = (kosong)
+```bash
+python -m http.server 8000
 ```
 
-Jika MySQL memakai password, sesuaikan `DB_PASS`. Halaman admin: `/admin/login.php`.
+Lalu buka `http://localhost:8000`.
 
-## Struktur penting
+## Struktur
 
 ```
-docs/               # demo statis untuk GitHub Pages
-  index.html
-  assets/css|js/
-  images/
-admin/              # panel admin PHP
-assets/             # CSS/JS aplikasi PHP
-config/             # koneksi database & konfigurasi
-database/           # schema.sql dan seed.sql
-includes/           # fungsi, header, footer, komponen
-*.php               # halaman publik (menu, keranjang, checkout, akun)
+index.html            # halaman utama (SPA)
+favicon.svg
+assets/
+  css/
+    style.css         # tampilan utama
+    ads.css           # landing page gaya iklan Instagram
+    demo.css          # penyesuaian demo
+    admin.css         # panel admin
+  js/
+    data.js           # data contoh & penyimpanan localStorage
+    core.js           # utilitas, router, state
+    views-public.js   # halaman publik (beranda, menu, keranjang, checkout)
+    views-admin.js    # halaman admin
+    app.js            # inisialisasi aplikasi
+  images/             # foto menu
 ```
+
+## GitHub Pages
+
+Situs ini disajikan dari branch `main`, folder root (`/`). Setelah mengubah
+file, push ke `main` dan GitHub Pages akan memperbarui situs dalam 1–2 menit.

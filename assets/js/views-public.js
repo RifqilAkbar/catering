@@ -50,10 +50,10 @@
     }).join('');
 
     var adPhotos = [
-      { src: 'images/27k.jpg', alt: 'Nasi kotak dengan ayam bakar, telur, dan tumis mie' },
-      { src: 'images/13k.jpg', alt: 'Nasi kotak kuning dengan ayam bakar dan mie goreng' },
-      { src: 'images/geprek-10k.jpg', alt: 'Ayam geprek crispy dalam kotak makan' },
-      { src: 'images/20k.jpg', alt: 'Puluhan nasi kotak siap dikirim untuk acara' }
+      { src: 'assets/images/27k.jpg', alt: 'Nasi kotak dengan ayam bakar, telur, dan tumis mie' },
+      { src: 'assets/images/13k.jpg', alt: 'Nasi kotak kuning dengan ayam bakar dan mie goreng' },
+      { src: 'assets/images/geprek-10k.jpg', alt: 'Ayam geprek crispy dalam kotak makan' },
+      { src: 'assets/images/20k.jpg', alt: 'Puluhan nasi kotak siap dikirim untuk acara' }
     ];
 
     var adSlides = adPhotos.map(function (photo, index) {
@@ -67,9 +67,9 @@
     }).join('');
 
     var promoCards = [
-      { image: 'images/13k.jpg', tag: 'Paling dicari', title: 'Nasi Kotak', text: 'Praktis untuk rapat, seminar, dan syukuran.', price: 'Rp13.000', link: '#/menu?category=nasi-kotak' },
-      { image: 'images/geprek-10k.jpg', tag: 'Hemat', title: 'Ayam Geprek', text: 'Sambal khas dengan level pedas pilihan.', price: 'Rp10.000', link: '#/menu?category=ayam-geprek' },
-      { image: 'images/bg4.jpg', tag: 'Acara spesial', title: 'Tumpeng', text: 'Tampilan megah untuk momen berharga.', price: 'Rp85.000', link: '#/menu?category=tumpeng' }
+      { image: 'assets/images/13k.jpg', tag: 'Paling dicari', title: 'Nasi Kotak', text: 'Praktis untuk rapat, seminar, dan syukuran.', price: 'Rp13.000', link: '#/menu?category=nasi-kotak' },
+      { image: 'assets/images/geprek-10k.jpg', tag: 'Hemat', title: 'Ayam Geprek', text: 'Sambal khas dengan level pedas pilihan.', price: 'Rp10.000', link: '#/menu?category=ayam-geprek' },
+      { image: 'assets/images/bg4.jpg', tag: 'Acara spesial', title: 'Tumpeng', text: 'Tampilan megah untuk momen berharga.', price: 'Rp85.000', link: '#/menu?category=tumpeng' }
     ].map(function (promo) {
       return '<a class="promo-card reveal" href="' + promo.link + '">' +
         '<span class="promo-bg" style="background-image:url(' + e(promo.image) + ')" aria-hidden="true"></span>' +
@@ -175,7 +175,7 @@
     '</div></section>' +
 
     '<section class="section section--cream" id="tentang"><div class="container"><div class="split">' +
-      '<div class="split-media reveal"><img src="images/bg7.jpg" alt="Dapur Catering menyiapkan hidangan">' +
+      '<div class="split-media reveal"><img src="assets/images/bg7.jpg" alt="Dapur Catering menyiapkan hidangan">' +
         '<div class="split-badge"><strong>Sejak 2018</strong><span>Melayani dengan sepenuh hati</span></div></div>' +
       '<div class="reveal"><span class="eyebrow">Tentang Kami</span>' +
         '<h2>Dapur Rumahan dengan Standar Profesional</h2>' +
